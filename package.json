@@ -1,0 +1,39 @@
+{
+  "name": "@planterdocs/fetch-api",
+  "version": "0.0.0",
+  "description": "A query only API for front-end applications",
+  "main": "server.js",
+  "scripts": {
+    "dev": "NODE_DEBUG=fetch-api::* nodemon server.js",
+    "test": "npm run lint",
+    "lint": "echo \"Running Lint...\" && standard --verbose && echo \"Lint Successful!\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/planterdocs/fetch-api.git"
+  },
+  "keywords": [
+    "fetch",
+    "api",
+    "document",
+    "caching"
+  ],
+  "author": "Planterdocs (https://github.com/planterdocs)",
+  "contributors": [
+    "Michael Sterpka <michaelsterpka@gmail.com> (https://github.com/mster)",
+    "Tyler Laskey <tlaskey3@gmail.com> (https://github.com/tlaskey)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/planterdocs/fetch-api/issues"
+  },
+  "homepage": "https://github.com/planterdocs/fetch-api#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "standard": "^14.3.4"
+  },
+  "dependencies": {
+    "fastify": "^3.1.1",
+    "fireferret": "0.0.1-alpha-1"
+  }
+}
