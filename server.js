@@ -1,27 +1,15 @@
 'use strict'
 
+/* load env vars from dot file */
 require('dotenv').config()
 
-const fastify = require('fastify')
-const ff = require('./services/fireferret')
-const plantRoutes = require('./routes/plants')
+const build = require('./src/build')
 
+/* build server app */
+const app = build({ logger: true })
 const PORT = process.env.PORT || 3371
 
-const app = fastify({
-  logger: true
-})
-
-app.register(ff, {})
-
-plantRoutes.forEach(route => {
-  app.route(route)
-})
-
-app.get('/', async () => {
-  return "Welcome home Data... we've been expecting you"
-})
-
+/* start up */
 const start = async () => {
   try {
     await app.listen(PORT)
