@@ -27,6 +27,17 @@ MONGO_COLLECTION=
 The FireFerret client manages datastore connections, queries, and errors. Read more about fine-tuning FireFerret [here](https://github.com/mster/fireferret#fireferret).
 
 ## API
+```
+└── /
+    └── api (GET)
+        └── / (GET)
+            └── plant
+                ├── /
+                │   └── :name (GET)
+                └── s (GET)
+                    └── / (GET)
+                        └── :region (GET)
+```
 
 ## Proxying
 
