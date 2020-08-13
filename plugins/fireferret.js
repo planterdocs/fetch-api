@@ -1,7 +1,7 @@
 'use strict'
 
 const fastifyPlugin = require('fastify-plugin')
-const FireFerret = require('../../../node/fireferret')
+const FireFerret = require('fireferret')
 
 async function fireFerret (fastify, options) {
   try {
