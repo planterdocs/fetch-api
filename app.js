@@ -3,7 +3,7 @@
 /* load env vars from dot file */
 require('dotenv').config()
 
-const build = require('./src/build')
+const build = require('./build')
 
 /* build server app */
 const app = build({ logger: true })

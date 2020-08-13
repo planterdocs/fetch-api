@@ -1,11 +1,11 @@
 {
   "name": "@planterdocs/fetch-api",
   "version": "0.0.0",
-  "description": "A query only API for front-end applications",
+  "description": "A query only API",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "NODE_DEBUG=fetch-api::*,fireferret::* nodemon server.js",
+    "start": "node app.js",
+    "dev": "NODE_DEBUG=fetch-api::*,fireferret::* nodemon app.js",
     "test": "npm run lint",
     "lint": "echo \"Running Lint...\" && standard --verbose && echo \"Lint Successful!\""
   },
@@ -13,11 +13,15 @@
     "type": "git",
     "url": "git+https://github.com/planterdocs/fetch-api.git"
   },
-  "keywords": ["fetch", "api", "document", "caching"],
+  "keywords": [
+    "fetch",
+    "api",
+    "document",
+    "caching"
+  ],
   "author": "Planterdocs (https://github.com/planterdocs)",
   "contributors": [
-    "Michael Sterpka <michaelsterpka@gmail.com> (https://github.com/mster)",
-    "Tyler Laskey <tlaskey3@gmail.com> (https://github.com/tlaskey)"
+    "Michael Sterpka <michaelsterpka@gmail.com> (https://github.com/mster)"
   ],
   "license": "MIT",
   "bugs": {
@@ -31,7 +35,9 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "fastify": "^3.1.1",
+    "fastify-autoload": "^3.0.7",
     "fastify-plugin": "^2.0.3",
-    "fireferret": "^0.0.1-alpha-3"
+    "fireferret": "^0.0.1-alpha-10",
+    "http-errors": "^1.8.0"
   }
 }
