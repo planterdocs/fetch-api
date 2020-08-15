@@ -5,6 +5,10 @@ const findAll = {
     200: {
       type: 'array'
     }
+  },
+  queryString: {
+    page: { type: 'number' },
+    size: { type: 'number' }
   }
 }
 
@@ -13,6 +17,10 @@ const findByRegion = {
     200: {
       type: 'array'
     }
+  },
+  queryString: {
+    page: { type: 'number' },
+    size: { type: 'number' }
   }
 }
 

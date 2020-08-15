@@ -6,6 +6,7 @@ const FireFerret = require('fireferret')
 async function fireFerret (fastify, options) {
   try {
     const ffopts = {
+      wideMatch: true,
       REDIS_OPTS: {
         host: process.env.REDIS_HOST,
         port: process.env.REDIS_PORT,

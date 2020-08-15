@@ -16,17 +16,38 @@ module.exports = async function (fastify, opts) {
     '/',
     { schema: schemas.findAll },
     async function (req) {
-      return this.fireFerret.fetch({})
+      const { page, size } = req.query
+
+      let plants
+      if (!isNaN(page) && !isNaN(size)) {
+        plants = await this.fireFerret.fetch({}, { pagination: { page, size } })
+      } else if (!page && !size) {
+        plants = await this.fireFerret.fetch({})
+      } else {
+        throw httpError(404, 'Pagination requires page and size query params as coercible integers')
+      }
+
+      if (!plants || plants.length === 0) throw httpError(404, 'Requested plants do not exist')
+      return plants
     }
   )
 
   fastify.get(
-    '/:region',
+    '/region/:region',
     { schema: schemas.findByRegion },
     async function (req) {
-      const plants = await this.fireFerret.fetch({ region: req.params.region })
+      const { page, size } = req.query
 
-      if (!plants || plants.length === 0) throw httpError(404, 'Request regional plants do not exist')
+      let plants
+      if (!isNaN(page) && !isNaN(size)) {
+        plants = await this.fireFerret.fetch({ region: req.params.region }, { pagination: { page, size } })
+      } else if (!page && !size) {
+        plants = await this.fireFerret.fetch({ region: req.params.region })
+      } else {
+        throw httpError(404, 'Pagination requires page and size query params as coercible integers')
+      }
+
+      if (!plants || plants.length === 0) throw httpError(404, 'Requested regional plants do not exist')
       return plants
     }
   )

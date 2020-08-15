@@ -13,12 +13,23 @@ module.exports = async function (fastify, opts) {
   })
 
   fastify.get(
-    '/:name',
+    '/name/:name',
     { schema: schemas.findByName },
     async function (req) {
       const plant = await this.fireFerret.fetchOne({ name: req.params.name })
 
-      if (!plant) throw httpError(404, 'Request plant does not exist')
+      if (!plant) throw httpError(404, `Request plant with name '${req.params.name}' does not exist`)
+      return plant
+    }
+  )
+
+  fastify.get(
+    '/id/:id',
+    { schema: schemas.findByID },
+    async function (req) {
+      const plant = await this.fireFerret.fetchById(req.params.id)
+
+      if (!plant) throw httpError(404, `Request plant with id '${req.params.id}' does not exist`)
       return plant
     }
   )

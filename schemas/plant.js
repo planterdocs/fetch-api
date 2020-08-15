@@ -12,9 +12,22 @@ const findByName = {
       }
     }
   },
-  queryString: {
-
-  }
+  queryString: { }
 }
 
-module.exports = { findByName }
+const findByID = {
+  response: {
+    200: {
+      type: 'object',
+      properties: {
+        name: { type: 'string' },
+        num: { type: 'number' },
+        _id: { type: 'string' },
+        region: { type: 'array' }
+      }
+    }
+  },
+  queryString: { }
+}
+
+module.exports = { findByName, findByID }
