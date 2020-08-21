@@ -13,6 +13,7 @@ const PORT = process.env.PORT || 3371
 const start = async () => {
   try {
     await app.listen(PORT)
+    console.log(app.printRoutes())
     app.log.info(`Server listening on ${app.server.address().port}`)
   } catch (err) {
     app.log.error(err)

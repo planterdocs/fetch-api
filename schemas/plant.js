@@ -12,7 +12,7 @@ const findByName = {
       }
     }
   },
-  queryString: { }
+  queryString: {}
 }
 
 const findByID = {
@@ -27,7 +27,7 @@ const findByID = {
       }
     }
   },
-  queryString: { }
+  queryString: {}
 }
 
 module.exports = { findByName, findByID }

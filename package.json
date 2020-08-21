@@ -38,7 +38,7 @@
     "fastify": "^3.1.1",
     "fastify-autoload": "^3.0.7",
     "fastify-plugin": "^2.0.3",
-    "fireferret": "^0.0.1-alpha-10",
+    "fireferret": "^0.2",
     "http-errors": "^1.8.0"
   }
 }
