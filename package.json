@@ -8,7 +8,8 @@
     "dev": "NODE_DEBUG=fetch-api::*,fireferret::* nodemon app.js",
     "prod": "NODE_ENV=production node app.js",
     "test": "npm run lint",
-    "lint": "echo \"Running Lint...\" && standard --verbose && echo \"Lint Successful!\""
+    "lint": "echo \"Running Lint...\" && standard --verbose && echo \"Lint Successful!\"",
+    "lint-fix": "echo \"Running standard --fix\" && standard --fix && echo \"Good to go!\""
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,7 @@
     "dotenv": "^8.2.0",
     "fastify": "^3.1.1",
     "fastify-autoload": "^3.0.7",
+    "fastify-helmet": "^5.0.1",
     "fastify-plugin": "^2.0.3",
     "fireferret": "^0.2",
     "http-errors": "^1.8.0"
